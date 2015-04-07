@@ -15,17 +15,11 @@
   ([k] (pascals-triangle k []))
   ([k acc]
    (if (> k 0)
-     (let [new-acc (conj acc
-                         (map #(value-at-pos (dec k) %)
-                              (range k)))]
+     (let [new-acc (conj acc (map #(value-at-pos (dec k) %) (range k)))]
        (recur (dec k) new-acc))
      (reverse acc))))
 
-(doall
-    (map #(do
-            (doall
-                (for [el %]
-                (print (str el " "))))
-            (println)) 
+(doall (map #(do (doall (for [el %]
+                          (print (str el " "))))
+                 (println)) 
           (pascals-triangle k)))
-
