@@ -16,9 +16,3 @@
       init-sum    (digits-sum n)
       initial-val (str (* (char||str->int k) init-sum))]
   (println (super-digit initial-val)))
-
-
-
-
-
-
